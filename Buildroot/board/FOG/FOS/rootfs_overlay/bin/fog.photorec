@@ -18,7 +18,7 @@ fi
 echo "Done"
 debugPause
 dots "Mounting File System"
-mount -o nolock $storage /images >/tmp/mount-output 2>&1
+mount nfsv4 -o nolock $storage /images >/tmp/mount-output 2>&1
 case $? in
     0)
         echo "Done"

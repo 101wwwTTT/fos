@@ -14,10 +14,10 @@ fi
 umount /images >/dev/null 2>&1
 case $type in
     up)
-        mount -o nolock,proto=tcp,rsize=32768,wsize=32768,intr,noatime "$storage" /images >/tmp/mount-output 2>&1
+        mount nfsv4 -o nolock,proto=tcp,rsize=32768,wsize=32768,intr,noatime "$storage" /images >/tmp/mount-output 2>&1
         ;;
     down)
-        mount -o nolock,proto=tcp,rsize=32768,intr,noatime "$storage" /images >/tmp/mount-output 2>&1
+        mount nfsv4 -o nolock,proto=tcp,rsize=32768,intr,noatime "$storage" /images >/tmp/mount-output 2>&1
         ;;
 esac
 case $? in
